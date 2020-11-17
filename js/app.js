@@ -1,16 +1,12 @@
 $(function() {
-  const text = "WE ARE FRIENDS!".split("");
-  let idx = 0;
+  const window_h = $(window).height();
 
-
-  // console.log(text);
-  // // $(".intro__text h2").text("");
-  // const timer = setInterval(function() {
-  //   if(idx < text.length) {
-  //     $(".intro__text h2").append("<span>" + text[idx++] + "</span>");
-  //     $(".intro__text h2 span:last").animate({opacity: 1}, 1000);
-  //   }else {
-  //     clearInterval(timer);
-  //   }
-  // }, 250);
+  $(".section").on("mousewheel", function(e) {
+    e.preventDefault();
+    if(e.originalEvent.wheelDelta >= 0) {
+      $("html, body").stop().animate({scrollTop: 0}, 900, "easeOutCubic");
+    } else {
+      $("html, body").stop().animate({scrollTop: window_h}, 900, "easeOutCubic");
+    }
+  });
 });
