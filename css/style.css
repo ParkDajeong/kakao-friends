@@ -1,3 +1,20 @@
+/* Scroll Down */
+.scroll-down-arrow {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  width: 37px;
+  height: 37px;
+  transform: translateX(-50%);
+  animation: scroll-down 1s ease-in infinite alternate;
+}
+
+.scroll-down-arrow svg {
+  fill: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: auto;
+}
+
 /* Intro */
 .intro {
   width: 100%;
@@ -32,7 +49,7 @@
 }
 
 .intro__text h2 span {
-  animation: jumping 1.3s infinite alternate;
+  animation: bounce 1.3s infinite alternate;
 }
 
 .intro__text h2 span:nth-child(2) {
@@ -78,6 +95,13 @@
   color: #2b3639;
 }
 
+/* Section Desc */
+.section__desc {
+  position: absolute;
+  top: 252px;
+  left: 263px;
+}
+
 /* Character Info */
 .character {
   position: relative;
@@ -94,10 +118,17 @@
   align-items: center;
   width: 100%;
   max-width: 1000px;
+  height: 445px;
   padding: 15px 45px;
   border: 1px solid #e2e2e2;
   border-radius: 10px;
+  opacity: 0;
   transform: translate(-50%, -50%);
+  transition: opacity 250ms ease-out;
+}
+
+.character__box.active {
+  opacity: 1;
 }
 
 .character__img,
@@ -111,6 +142,42 @@
   width: 205px;
   height: 361px;
   margin: 50px 0 0 100px;
+  background-position: 0 0;
+}
+
+.apeach .character__img {
+  width: 280px;
+  height: 199px;
+  margin: 40px 0 0 75px;
+  background-position: -220px 0;
+}
+
+.muzi-con .character__img {
+  width: 229px;
+  height: 359px;
+  margin: 35px 0 0 100px;
+  background-position: -480px -200px;
+}
+
+.frodo-neo .character__img {
+  width: 356px;
+  height: 306px;
+  margin: 30px 0 0 40px;
+  background-position: 0 -677px;
+}
+
+.tube .character__img {
+  width: 194px;
+  height: 290px;
+  margin: 50px 0 0 100px;
+  background-position: 0 -380px;
+}
+
+.jayg .character__img {
+  width: 255px;
+  height: 397px;
+  margin: 45px 0 0 70px;
+  background-position: -215px -200px;
 }
 
 .character__info {
@@ -121,6 +188,36 @@
   width: 85px;
   height: 24px;
   background-position: -510px 0;
+}
+
+.apeach .character__name {
+  width: 131px;
+  height: 24px;
+  background-position: -510px -29px;
+}
+
+.muzi-con .character__name {
+  width: 178px;
+  height: 25px;
+  background-position: -510px -58px;
+}
+
+.frodo-neo .character__name {
+  width: 208px;
+  height: 25px;
+  background-position: -510px -88px;
+}
+
+.tube .character__name {
+  width: 89px;
+  height: 24px;
+  background-position: -510px -120px;
+}
+
+.jayg .character__name {
+  width: 97px;
+  height: 24px;
+  background-position: -510px -153px;
 }
 
 .character__desc {
@@ -136,6 +233,15 @@
 }
 
 /* ============= 애니메이션 ============= */
+@keyframes scroll-down {
+  from {
+    bottom: 25px;
+  }
+  to {
+    bottom: 10px;
+  }
+}
+
 @keyframes fadein {
   from {
     opacity: 0;
@@ -145,7 +251,7 @@
   }
 }
 
-@keyframes jumping {
+@keyframes bounce {
   0% {
     opacity: 1;
     transform: translateY(0);
