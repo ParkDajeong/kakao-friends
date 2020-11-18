@@ -95,18 +95,19 @@
   color: #2b3639;
 }
 
-/* Section Desc */
-.section__desc {
-  position: absolute;
-  top: 252px;
-  left: 263px;
-}
-
 /* Character Info */
 .character {
   position: relative;
   width: 100%;
   height: 100vh;
+}
+
+/* Section Desc */
+.section__desc {
+  position: relative;
+  top: 25%;
+  width: 1000px;
+  margin: 0 auto;
 }
 
 .character__box {
@@ -124,7 +125,7 @@
   border-radius: 10px;
   opacity: 0;
   transform: translate(-50%, -50%);
-  transition: opacity 250ms ease-out;
+  transition: opacity 300ms ease-out;
 }
 
 .character__box.active {
